@@ -5,6 +5,9 @@
 
 #define DEFAULT_CAPACITY 2
 
+// I am not handling any errors, like popping with 0 elements or accessing an
+// index that does not exist, on purpose.
+
 struct dynamic_array* new_dyamic_array()
 {
     struct dynamic_array *array = (struct dynamic_array*) malloc(sizeof(struct dynamic_array));
@@ -83,14 +86,9 @@ void remove_element(struct dynamic_array *array, int element)
     }
 }
 
-void* get(struct dynamic_array *array, int index)
+int get(struct dynamic_array *array, int index)
 {
-    if (index < array->length && index >= 0)
-    {
-        return &array->arr[index];
-    }
-
-    return NULL;
+    return array->arr[index];
 }
 
 int find(struct dynamic_array *array, int element)
