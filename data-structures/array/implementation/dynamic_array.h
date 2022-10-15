@@ -8,7 +8,7 @@ struct dynamic_array
     int length;
 };
 
-struct dynamic_array* new_dyamic_array();
+struct dynamic_array* new_dyamic_array(void);
 
 void append(struct dynamic_array *array, int data);
 void insert_element(struct dynamic_array *array, int data, int index);

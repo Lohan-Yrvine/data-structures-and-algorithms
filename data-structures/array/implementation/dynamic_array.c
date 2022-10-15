@@ -8,7 +8,7 @@
 // I am not handling any errors, like popping with 0 elements or accessing an
 // index that does not exist, on purpose.
 
-struct dynamic_array* new_dyamic_array()
+struct dynamic_array* new_dyamic_array(void)
 {
     struct dynamic_array *array = (struct dynamic_array*) malloc(sizeof(struct dynamic_array));
     array->arr = (int*) malloc(DEFAULT_CAPACITY * sizeof(int));

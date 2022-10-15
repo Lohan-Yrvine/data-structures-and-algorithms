@@ -2,7 +2,7 @@
 
 #include "implementation/dynamic_array.h"
 
-int main()
+int main(void)
 {
     struct dynamic_array *regular = new_dyamic_array();
     struct dynamic_array *reversed = new_dyamic_array();

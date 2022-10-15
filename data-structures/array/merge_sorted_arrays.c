@@ -2,7 +2,7 @@
 
 #include "implementation/dynamic_array.h"
 
-int main()
+int main(void)
 {
     struct dynamic_array *array1 = new_dyamic_array();
     struct dynamic_array *array2 = new_dyamic_array();
