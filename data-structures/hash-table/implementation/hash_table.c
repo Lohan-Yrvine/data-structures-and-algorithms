@@ -7,8 +7,8 @@
 
 struct hash_table* new_hash_table(void)
 {
-    struct hash_table *table;
-    table->arr = (struct node**) malloc(TABLE_SIZE * sizeof(struct node));
+    struct hash_table *table = (struct hash_table*) malloc(sizeof(struct hash_table*));
+    table->arr = (struct node**) malloc(TABLE_SIZE * sizeof(struct node*));
     for (int i = 0; i < TABLE_SIZE; i++)
     {
         table->arr[i] = NULL;
@@ -33,10 +33,15 @@ void insert_element(struct hash_table *table, int key, int value)
     table->arr[h] = n;
 }
 
-int get_value(struct hash_table *table, int key)
+void* get_value(struct hash_table *table, int key)
 {
     int h = hash_function(key);
-    return table->arr[h]->value;
+    if (table->arr[h] == NULL)
+    {
+        return NULL;
+    }
+
+    return &table->arr[h]->value;
 }
 
 void remove_element(struct hash_table *table, int key)
