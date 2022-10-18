@@ -137,7 +137,7 @@ int find_element(struct singly_linked_list *ll, int element)
 void display(struct singly_linked_list *ll)
 {
     struct node *n = ll->head;
-    for (int i = 0; i < ll->length-2; i++)
+    for (int i = 0; i < ll->length-1; i++)
     {
         printf("%d --> ", n->data);
         n = n->next;
