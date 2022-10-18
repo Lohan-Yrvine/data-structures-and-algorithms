@@ -92,7 +92,6 @@ int remove_element(struct singly_linked_list *ll, int index)
 
             return data;
         }
-
     }
 }
 
