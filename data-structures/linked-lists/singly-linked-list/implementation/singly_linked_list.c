@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "linked_list.h"
+#include "singly_linked_list.h"
 
-struct linked_list* new_linked_list(void)
+struct singly_linked_list* new_singly_linked_list(void)
 {
-    struct linked_list *ll = (struct linked_list*) malloc(sizeof(struct linked_list));
+    struct singly_linked_list *ll = (struct singly_linked_list*) malloc(sizeof(struct singly_linked_list));
     ll->head = NULL;
     ll->tail = NULL;
     ll->length = 0;
@@ -13,7 +13,7 @@ struct linked_list* new_linked_list(void)
     return ll;
 }
 
-void insert_element(struct linked_list *ll, int data, int index)
+void insert_element(struct singly_linked_list *ll, int data, int index)
 {
     struct node *n = (struct node*) malloc(sizeof(struct node));
     n->data = data;
@@ -52,7 +52,7 @@ void insert_element(struct linked_list *ll, int data, int index)
     }
 }
 
-int remove_element(struct linked_list *ll, int index)
+int remove_element(struct singly_linked_list *ll, int index)
 {
     struct node *tmp = ll->head;
 
@@ -96,7 +96,7 @@ int remove_element(struct linked_list *ll, int index)
     }
 }
 
-int get_element(struct linked_list *ll, int index)
+int get_element(struct singly_linked_list *ll, int index)
 {
     if (index == 0)
     {
@@ -118,7 +118,7 @@ int get_element(struct linked_list *ll, int index)
     }
 }
 
-int find_element(struct linked_list *ll, int element)
+int find_element(struct singly_linked_list *ll, int element)
 {
     struct node *n = ll->head;
     for (int i = 0; i < ll->length-1; i++)
@@ -134,7 +134,7 @@ int find_element(struct linked_list *ll, int element)
     return -1;
 }
 
-void display(struct linked_list *ll)
+void display(struct singly_linked_list *ll)
 {
     struct node *n = ll->head;
     for (int i = 0; i < ll->length-2; i++)
