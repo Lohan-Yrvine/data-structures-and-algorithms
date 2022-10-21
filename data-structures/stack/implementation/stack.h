@@ -1,3 +1,6 @@
+#ifndef STACK_H
+#define STACK_H
+
 struct node
 {
     int data;
@@ -18,3 +21,5 @@ int pop(struct stack *st);
 bool is_empty(struct stack *st);
 
 void display(struct stack* st);
+
+#endif
