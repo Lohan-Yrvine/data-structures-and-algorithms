@@ -13,9 +13,9 @@ struct stack* new_stack(void)
     return st;
 }
 
-struct node peek(struct stack *st)
+int peek(struct stack *st)
 {
-    return *st->top;
+    return st->top->data;
 }
 
 void push(struct stack *st, int data)

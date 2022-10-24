@@ -15,7 +15,7 @@ struct stack
 
 struct stack* new_stack(void);
 
-struct node peek(struct stack *st);
+int peek(struct stack *st);
 void push(struct stack *st, int data);
 int pop(struct stack *st);
 bool is_empty(struct stack *st);
